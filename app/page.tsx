@@ -82,7 +82,13 @@ export default function Home() {
 }
 
 // FeatureCard component
-function FeatureCard({ title, desc }) {
+
+interface StepProps {
+  title: string;
+  desc: string;
+}
+
+function FeatureCard({ title, desc }: StepProps) {
   return (
     <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10 transition-all">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
