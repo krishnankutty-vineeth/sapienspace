@@ -1,65 +1,92 @@
-import Image from "next/image";
+import HeroSection from "@/app/HeroSection";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen w-full bg-[#020826] text-white">
+      <HeroSection />
+
+      {/* WHAT IS SAPIENSPACE */}
+      <section className="max-w-5xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl font-semibold mb-4">What is SapienSpace?</h2>
+        <p className="text-slate-300 max-w-3xl mx-auto">
+          Sapienspace is an open, AI-powered exploration platform uniting space
+          research, planetary science, robotics, deep-space communications, and
+          interdisciplinary innovation — built for students, researchers, and
+          the future of civilization.
+        </p>
+      </section>
+
+      {/* Four Lab Pillars */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-semibold text-center mb-12">
+          Our Focus Areas
+        </h2>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          <FeatureCard
+            title="Observatory"
+            desc="AI-assisted planetary data exploration, orbital insights, and intelligent analytics."
+          />
+          <FeatureCard
+            title="Space Communications"
+            desc="Simulating deep-space networks, DTN systems, and AI signal processing."
+          />
+          <FeatureCard
+            title="Robotics Lab"
+            desc="Rover autonomy, RL-driven robotics, and simulation environments for space exploration."
+          />
+          <FeatureCard
+            title="Research & Innovation"
+            desc="Interdisciplinary science, astroinformatics, climate, Earth observation, and mission design."
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* Open Research Platform */}
+      <section className="max-w-5xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl font-semibold mb-4">
+          Open Research Platform
+        </h2>
+        <p className="text-slate-300 max-w-3xl mx-auto">
+          A hybrid between Notion and GitHub — enabling structured research,
+          version-controlled datasets, collaborative notes, experiment tracking,
+          and AI-assisted scientific discovery.
+        </p>
+        <a
+          href="/platform"
+          className="inline-block mt-6 px-6 py-3 rounded-full bg-sky-400/90 text-[#021022] font-semibold hover:bg-sky-300/90 transition-all"
+        >
+          Explore the Platform
+        </a>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 text-center">
+        <h2 className="text-2xl font-semibold mb-4">
+          Join the Mission
+        </h2>
+        <p className="text-slate-300 max-w-2xl mx-auto mb-6">
+          Collaborate, learn, build, and innovate with a global community shaping
+          humanity’s future in the cosmos.
+        </p>
+        <a
+          href="/about"
+          className="inline-block px-6 py-3 rounded-full border border-slate-600 hover:bg-slate-700/30 transition-all"
+        >
+          Learn More
+        </a>
+      </section>
+    </main>
+  );
+}
+
+// FeatureCard component
+function FeatureCard({ title, desc }) {
+  return (
+    <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10 transition-all">
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-slate-300 text-sm">{desc}</p>
     </div>
   );
 }
