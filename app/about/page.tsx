@@ -136,8 +136,12 @@ export default function About() {
   );
 }
 
+interface StepProps {
+  title: string;
+  desc: string;
+}
 // Value card component
-function ValueCard({ title, desc }) {
+function ValueCard({ title, desc }: StepProps) {
   return (
     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
       <h3 className="text-lg font-semibold mb-3">{title}</h3>

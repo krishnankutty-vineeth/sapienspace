@@ -158,7 +158,12 @@ export default function Observatory() {
 }
 
 // Components
-function FeatureCard({ title, desc }) {
+interface StepProps {
+  title: string;
+  desc: string;
+}
+
+function FeatureCard({ title, desc }: StepProps) {
   return (
     <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -167,7 +172,7 @@ function FeatureCard({ title, desc }) {
   );
 }
 
-function AIBox({ title, desc }) {
+function AIBox({ title, desc }: StepProps) {
   return (
     <div className="p-6 rounded-xl bg-white/5 border border-white/10">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -176,7 +181,7 @@ function AIBox({ title, desc }) {
   );
 }
 
-function Module({ title, desc }) {
+function Module({ title, desc }: StepProps){
   return (
     <div className="p-6 rounded-xl bg-white/5 border border-white/10">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
