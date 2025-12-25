@@ -3,6 +3,20 @@
 import Link from "next/link";
 import { useNavigation } from "./NavigationProvider";
 
+import type { ComponentType } from "react";
+
+type NavLinkItem = {
+  name: string;
+  href: string;
+  icon: ComponentType<{ className?: string }>;
+};
+
+type NavSectionProps = {
+  title: string;
+  links: NavLinkItem[];
+  onNavigate: () => void;
+};
+
 const NAV_SECTIONS = [
   {
     title: "Sapienspace",
@@ -67,7 +81,7 @@ export default function ExploreSidebar() {
 
 /* ---------------- Components ---------------- */
 
-function NavSection({ title, links, onNavigate }) {
+function NavSection({ title, links, onNavigate }: NavSectionProps) {
   return (
     <div>
       <div className="text-xs uppercase text-gray-400 mb-2">
