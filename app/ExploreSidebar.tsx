@@ -8,7 +8,6 @@ import type { ComponentType } from "react";
 type NavLinkItem = {
   name: string;
   href: string;
-  icon: ComponentType<{ className?: string }>;
 };
 
 type NavSectionProps = {
